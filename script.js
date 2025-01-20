@@ -9,10 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.2 } // Trigger when 20% of the section is visible
+      { threshold: 0.5 }
     );
   
-    // Select all sections to observe
     const hiddenSections = document.querySelectorAll(".section-hidden");
     hiddenSections.forEach((section) => observer.observe(section));
   });

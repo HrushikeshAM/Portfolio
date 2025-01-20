@@ -1,4 +1,3 @@
-/* Reset and base styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -92,7 +91,6 @@ section {
   
   .projects-grid {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
@@ -261,20 +259,35 @@ section {
   
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
-    justify-items: center;
-  }
-  
-  .skill {
+    justify-content: center;
+    align-items: center;
     text-align: center;
-  }
-  
-  .skill img {
+}
+
+.skill {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill img {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
-  }
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+  
   
   .skill p {
     font-size: 1rem;
