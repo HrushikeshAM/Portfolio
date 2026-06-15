@@ -59,7 +59,8 @@ const CodeBackground = () => {
       for (let i = 0; i < drops.length; i++) {
         const char = charArray[Math.floor(Math.random() * charArray.length)];
         
-        ctx.fillStyle = getPurpleColor();
+        // Draw leading drop brighter (white/light lavender) to make the rain pop and look less dim
+        ctx.fillStyle = Math.random() > 0.88 ? '#ffffff' : getPurpleColor();
         
         const x = i * fontSize;
         const y = drops[i] * fontSize;
@@ -101,7 +102,7 @@ const CodeBackground = () => {
           height: '100vh',
           zIndex: -2,
           pointerEvents: 'none',
-          opacity: 0.8
+          opacity: 0.95
         }}
       />
       {/* Frosted Glass Blur Overlay */}
@@ -112,9 +113,9 @@ const CodeBackground = () => {
           left: 0,
           width: '100vw',
           height: '100vh',
-          background: 'rgba(3, 3, 3, 0.28)',
-          backdropFilter: 'blur(2px)',
-          WebkitBackdropFilter: 'blur(2px)',
+          background: 'rgba(3, 3, 3, 0.12)',
+          backdropFilter: 'blur(0.5px)',
+          WebkitBackdropFilter: 'blur(0.5px)',
           zIndex: -1,
           pointerEvents: 'none'
         }}
