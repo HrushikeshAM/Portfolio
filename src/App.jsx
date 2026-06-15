@@ -29,6 +29,9 @@ import Timeline from './components/Timeline';
 import ProjectCard from './components/ProjectCard';
 import CodeBackground from './components/CodeBackground';
 
+// External configuration
+import { projectsData } from './config/projectsData';
+
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -111,57 +114,7 @@ function App() {
     }
   };
 
-  // Profile data
-  const projectsData = [
-    {
-      name: "Self-Healing-Cloud",
-      description: "A self-healing cloud system with real-time monitoring, failure prediction, and automated remediation rules using Node.js and React.",
-      language: "JavaScript",
-      stars: 0,
-      url: "https://github.com/HrushikeshAM/Self-Healing-Cloud",
-      tags: ["React", "Node.js", "Express", "REST APIs", "Automation"]
-    },
-    {
-      name: "HEAL (Hospital Management)",
-      description: "Comprehensive medical ERP built on MERN Stack supporting admin, doctor, and patient panels with JWT authentication and database design.",
-      language: "JavaScript",
-      stars: 0,
-      url: "https://github.com/HrushikeshAM/HEAL",
-      tags: ["MERN Stack", "MongoDB", "Express", "React", "JWT Auth"]
-    },
-    {
-      name: "Cowrie Honeypot",
-      description: "Medium-interaction SSH/Telnet security honeypot setup logging brute force attacks and shell interactions by hackers.",
-      language: "Python",
-      stars: 0,
-      url: "https://github.com/HrushikeshAM/Cowrie",
-      tags: ["Python", "Linux Security", "Network Auditing", "Docker"]
-    },
-    {
-      name: "gitops-argo-demo",
-      description: "Demonstration of GitOps continuous deployment pipeline using Kubernetes and ArgoCD to maintain cluster states from git revisions.",
-      language: "YAML",
-      stars: 0,
-      url: "https://github.com/HrushikeshAM/gitops-argo-demo",
-      tags: ["GitOps", "ArgoCD", "Kubernetes", "CI/CD"]
-    },
-    {
-      name: "MSTKube-app",
-      description: "Vibrant node-application running inside Docker container with active replication and service endpoint configurations in Kubernetes.",
-      language: "JavaScript",
-      stars: 0,
-      url: "https://github.com/HrushikeshAM/MSTKube-app",
-      tags: ["Docker", "Kubernetes", "Node.js", "Cluster Setup"]
-    },
-    {
-      name: "launchforge",
-      description: "A robust starter boilerplate combining high-performance styling and secure API routes for rapid SaaS bootstrapping.",
-      language: "TypeScript",
-      stars: 0,
-      url: "https://github.com/HrushikeshAM/launchforge",
-      tags: ["TypeScript", "Next.js", "API Routes", "CSS Grid"]
-    }
-  ];
+
 
   const skillCategories = [
     {
@@ -242,7 +195,7 @@ function App() {
             transition={{ duration: 0.5 }}
           >
             <a 
-              href="/Hrushikesh_A_Menon_Resume.pdf" 
+              href="./Hrushikesh_A_Menon_Resume.pdf" 
               download="Hrushikesh_A_Menon_Resume.pdf"
               className="glow-button"
               id="download-resume-nav"

@@ -46,18 +46,24 @@ const Terminal = () => {
       "Key Projects:",
       "-------------",
       "1. Self-Healing Cloud (SHC) - Jan 2026",
-      "   Stack: Node.js, React, REST APIs, ML rules",
-      "   Desc : Real-time cloud monitor with rule-based auto-remediation and recovery.",
+      "   Stack: React, Node.js, Express, Docker, Kubernetes",
+      "   Desc : Kubernetes-based cloud architecture with automated failure detection and scaling.",
       "   Url  : https://github.com/HrushikeshAM/Self-Healing-Cloud",
       "",
-      "2. H.E.A.L. (Hospital Management System) - Feb 2023",
+      "2. ForgeFlow - Nov 2025",
+      "   Stack: TypeScript, Next.js, API Routes, CSS Grid",
+      "   Desc : Workflow automation starter boilerplate for SaaS deployment.",
+      "   Url  : https://github.com/HrushikeshAM/ForgeFlow",
+      "",
+      "3. H.E.A.L. (Hospital Management System) - Feb 2023",
       "   Stack: MERN (MongoDB, Express, React, Node)",
-      "   Desc : Full-stack admin, doctor, and patient registry with API auth.",
+      "   Desc : Full-stack medical ERP with role-based access control and JWT authentication.",
       "   Url  : https://github.com/HrushikeshAM/HEAL",
       "",
-      "3. Cowrie Honeypot deployment",
-      "   Stack: Python, Linux security, container auditing",
-      "   Desc : Medium-interaction SSH/Telnet honeypot tracking malicious terminal inputs."
+      "4. TutorLink - Jun 2026",
+      "   Stack: React Native, Expo, Redux Toolkit, Firebase, Maps",
+      "   Desc : Cross-platform tutor and student marketplace mobile application.",
+      "   Url  : https://github.com/HrushikeshAM/TutorLink"
     ],
     email: ["Email: Hrushikesh.amenon@gmail.com"],
     github: ["Opening GitHub profile... (https://github.com/HrushikeshAM)"],
@@ -100,7 +106,7 @@ const Terminal = () => {
         window.open('https://linkedin.com/in/hrushikesh-a-menon-13569b268/', '_blank');
       } else if (trimmed === 'resume') {
         const link = document.createElement('a');
-        link.href = '/Hrushikesh_A_Menon_Resume.pdf';
+        link.href = './Hrushikesh_A_Menon_Resume.pdf';
         link.download = 'Hrushikesh_A_Menon_Resume.pdf';
         link.click();
       }

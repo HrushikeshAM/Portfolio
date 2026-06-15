@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FolderGit2, Star } from 'lucide-react';
+import { FolderGit2, Star, ExternalLink } from 'lucide-react';
 import { Github } from './Icons';
 
 const ProjectCard = ({ project, idx }) => {
-  const { name, description, stars, url, tags } = project;
+  const { name, description, stars, githubUrl, liveUrl, tags } = project;
 
   // Custom animation configs
   const cardVariants = {
@@ -44,39 +44,58 @@ const ProjectCard = ({ project, idx }) => {
               <span>{stars}</span>
             </span>
           )}
-          <a 
-            href={url} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="project-card-link"
-            title="View Source on GitHub"
-          >
-            <Github style={{ width: '20px', height: '20px' }} />
-          </a>
+          {githubUrl && (
+            <a 
+              href={githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="project-card-link"
+              title="View Source on GitHub"
+            >
+              <Github style={{ width: '20px', height: '20px' }} />
+            </a>
+          )}
         </div>
       </div>
 
-      {/* Project info */}
-      <div>
-        <h3 className="project-card-title">
-          {name}
-        </h3>
-        <p className="project-card-desc">
-          {description}
-        </p>
+      {/* Project info container */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <div>
+          <h3 className="project-card-title">
+            {name}
+          </h3>
+          <p className="project-card-desc">
+            {description}
+          </p>
+        </div>
+
+        {/* Tech stack tags */}
+        {tags && tags.length > 0 && (
+          <div className="project-card-tags">
+            {tags.map((tag, tIdx) => (
+              <span 
+                key={tIdx} 
+                className="project-card-tag"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Tech stack tags */}
-      {tags && tags.length > 0 && (
-        <div className="project-card-tags">
-          {tags.map((tag, tIdx) => (
-            <span 
-              key={tIdx} 
-              className="project-card-tag"
-            >
-              {tag}
-            </span>
-          ))}
+      {/* Go to Project Live Button */}
+      {liveUrl && (
+        <div style={{ marginTop: '1.25rem', zIndex: 2 }}>
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-card-live-btn"
+          >
+            <span>Go to Project</span>
+            <ExternalLink style={{ width: '14px', height: '14px' }} />
+          </a>
         </div>
       )}
       
